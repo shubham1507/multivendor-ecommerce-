@@ -6,6 +6,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -14,14 +15,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    
     'corsheaders',
     'rest_auth',
     'rest_auth.registration',
     'rest_framework',
     'rest_framework.authtoken',
+
+    'apps.api.v1.accounts',
+    'apps.api.v1.cart',
+    'apps.api.v1.category',
+    'apps.api.v1.orders',
+    'apps.api.v1.payments',
+    'apps.api.v1.wishlist',
+    'apps.api.v1.stock'
 ]
 
 MIDDLEWARE = [
@@ -78,3 +89,4 @@ REST_FRAMEWORK = {
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+SHELL_PLUS = "ipython"
