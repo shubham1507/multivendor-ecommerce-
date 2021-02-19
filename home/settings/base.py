@@ -26,6 +26,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
 
+    'phonenumber_field',
+    'address',
+    
+
     'apps.api.v1.accounts',
     'apps.api.v1.cart',
     'apps.api.v1.category',
@@ -63,6 +67,7 @@ TEMPLATES = [
         },
     },
 ]
+AUTH_USER_MODEL = 'accounts.User'
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
