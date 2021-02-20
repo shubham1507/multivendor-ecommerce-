@@ -1,5 +1,6 @@
 from django.db import models
-from ..products.models import Product
+import uuid
+from apps.api.v1.products.models import Product
 from ..accounts.models import User
 
 

@@ -2,7 +2,6 @@ from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 from ..category.models import Category
-from ..accounts.models import Seller
 
 
 
@@ -22,4 +21,4 @@ class Product(models.Model):
     by_seller =models.ForeignKey(Seller, on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
-    insertedby = models.ForeignKey(Seller, on_delete=models.CASCADE)
+    insertedby = models.ForeignKey(User, on_delete=models.CASCADE)

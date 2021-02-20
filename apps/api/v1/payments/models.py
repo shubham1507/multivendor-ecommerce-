@@ -24,7 +24,7 @@ class PaymentOption(models.Model):
     cc_number = CardNumberField(_('card number'))
     cc_expiry = CardExpiryField(_('expiration date'))
     cc_code = SecurityCodeField(_('security code'))
-    CardType =   
+    CardType =   ("cc","gf","db")
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
     insertedby = models.ForeignKey(User, on_delete=models.CASCADE)

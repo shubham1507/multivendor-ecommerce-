@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     'apps.api.v1.accounts',
     'apps.api.v1.cart',
+    'apps.api.v1.products',
     'apps.api.v1.category',
     'apps.api.v1.orders',
     'apps.api.v1.payments',

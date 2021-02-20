@@ -1,5 +1,6 @@
 from django.db import models
-from ..accounts.models import Seller
+import uuid
+from ..accounts.models import Admin
 
 
 
@@ -10,7 +11,7 @@ class Category(models.Model):
     desciption = models.TextField()
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
-    insertedby = models.ForeignKey(Seller, on_delete=models.CASCADE)
+    insertedby = models.ForeignKey(Admin, on_delete=models.CASCADE)
 
 
 
