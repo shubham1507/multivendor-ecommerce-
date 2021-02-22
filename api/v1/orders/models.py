@@ -15,6 +15,9 @@ class ShipmentStatus(models.Model):
     updated_at=models.DateTimeField(auto_now_add=True)
     update_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+
+        return str(self.update_by)
 
 
 class Order(models.Model):
