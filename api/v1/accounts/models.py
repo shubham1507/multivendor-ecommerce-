@@ -17,6 +17,9 @@ class User(AbstractUser):
     REQUIRED_FIELDS = [
         'username',
     ]
+
+    def __str__(self):
+        return str(self.username )
     
 class Seller(models.Model):
 
@@ -41,6 +44,10 @@ class Admin(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return str(self.admin)
+
+
 
 class Address(models.Model):
 
@@ -51,7 +58,7 @@ class Address(models.Model):
     is_delivery_address = models.BooleanField(_('IsDeliveryAddress'), default=False)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
-    insertedby = models.ForeignKey(User, related_name='insertedby',on_delete=models.CASCADE)
+    insertedby = models.ForeignKey(User, related_name='+',on_delete=models.CASCADE)
 
 
 # class Vendor(models.Model):
@@ -74,7 +81,7 @@ class Shipper(models.Model):
     contact = PhoneField(blank=True, help_text='Contact phone number')
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
-    insertedby = models.ForeignKey(User, on_delete=models.CASCADE)
+    insertedby = models.ForeignKey(User, related_name='+',on_delete=models.CASCADE)
 
 
 

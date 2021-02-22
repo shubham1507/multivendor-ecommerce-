@@ -23,14 +23,14 @@ urlpatterns = [
          name="refresh_token"),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
-    path('', include('apps.api.v1.accounts.urls')),
-    path('cart/', include('apps.api.v1.cart.urls')),
-    path('category/', include('apps.api.v1.category.urls')),
-    path('orders/', include('apps.api.v1.orders.urls')),
-    path('payments/', include('apps.api.v1.payments.urls')),
-    path('payments/', include('apps.api.v1.products.urls')),
-    path('stock/', include('apps.api.v1.stock.urls')),
-    path('wishlist/', include('apps.api.v1.wishlist.urls'))
+    path('', include('api.v1.accounts.urls')),
+    path('cart/', include('api.v1.cart.urls')),
+    path('category/', include('api.v1.category.urls')),
+    path('orders/', include('api.v1.orders.urls')),
+    path('payments/', include('api.v1.payments.urls')),
+    path('payments/', include('api.v1.products.urls')),
+    path('stock/', include('api.v1.stock.urls')),
+    path('wishlist/', include('api.v1.wishlist.urls'))
 
 
 

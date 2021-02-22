@@ -11,7 +11,12 @@ class Category(models.Model):
     desciption = models.TextField()
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
-    insertedby = models.ForeignKey(Admin, on_delete=models.CASCADE)
+    insertedby = models.ForeignKey(Admin,default=1, on_delete=models.CASCADE)
+    
+
+    def __str__(self):
+
+        return str(self.insertedby)
 
 
 
