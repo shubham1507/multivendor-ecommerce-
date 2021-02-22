@@ -2,10 +2,9 @@ from django.db import models
 import uuid
 from address.models import AddressField
 from django.utils.translation import ugettext_lazy as _
-# from ..products.models import Product
-from apps.api.v1.products.models import Product
-from ..accounts.models import User, Address
-from ..payments.models import Payment
+from api.v1.products.models import Product
+from api.v1.accounts.models import User, Address
+from api.v1.payments.models import Payment
 
 
 

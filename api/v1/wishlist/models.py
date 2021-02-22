@@ -1,6 +1,8 @@
 from django.db import models
-from ..products.models import Product
-from ..accounts.models import User
+from api.v1.products.models import Product
+from api.v1.accounts.models import User
+
+
 
 
 

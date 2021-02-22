@@ -1,6 +1,6 @@
 from django.db import models
 import uuid
-from ..accounts.models import Admin
+from api.v1.accounts.models import Admin
 
 
 

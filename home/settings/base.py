@@ -30,14 +30,14 @@ INSTALLED_APPS = [
     'address',
     
 
-    'apps.api.v1.accounts',
-    'apps.api.v1.cart',
-    'apps.api.v1.products',
-    'apps.api.v1.category',
-    'apps.api.v1.orders',
-    'apps.api.v1.payments',
-    'apps.api.v1.wishlist',
-    'apps.api.v1.stock'
+    'api.v1.accounts',
+    'api.v1.cart',
+    'api.v1.products',
+    'api.v1.category',
+    'api.v1.orders',
+    'api.v1.payments',
+    'api.v1.wishlist',
+    'api.v1.stock'
 ]
 
 MIDDLEWARE = [
