@@ -20,6 +20,12 @@ class User(AbstractUser):
 
     def __str__(self):
         return str(self.username )
+    # @property
+    # def user__username(self):
+    #     return self.user.username
+
+    # def __unicode__(self):
+    #     return self.user.username
     
 class Seller(models.Model):
 
