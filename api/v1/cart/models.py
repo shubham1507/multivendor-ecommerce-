@@ -12,7 +12,7 @@ class Cart(models.Model):
     user_id = models.ForeignKey(User,related_name="user_id", on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now_add=True)
-    insertedby = models.ForeignKey(User,related_name="insertedby", on_delete=models.CASCADE)
+    # insertedby = models.ForeignKey(User,related_name="insertedby", on_delete=models.CASCADE)
 
 
     def __str__(self):

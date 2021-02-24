@@ -2,7 +2,7 @@ from django.db import models
 import uuid
 from django.utils.translation import ugettext_lazy as _
 from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
-from api.v1.accounts.models import User
+# from api.v1.accounts.models import User
 # from api.v1.orders.models import Order
 
 
@@ -12,7 +12,7 @@ class PaymentOption(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     cc_number = CardNumberField(_('card number'))
     cc_expiry = CardExpiryField(_('expiration date'))
     cc_code = SecurityCodeField(_('security code'))

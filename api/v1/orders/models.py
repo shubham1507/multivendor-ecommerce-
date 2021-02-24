@@ -3,7 +3,7 @@ import uuid
 from address.models import AddressField
 from django.utils.translation import ugettext_lazy as _
 from api.v1.products.models import Product
-from api.v1.accounts.models import User, Address
+from api.v1.accounts.models import User
 # from api.v1.payments.models import Payment
 
 
@@ -29,7 +29,6 @@ class Order(models.Model):
     totalprice = models.PositiveIntegerField()
     # payment_id = models.ForeignKey(Payment, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
-    delivery_address_id = models.OneToOneField(Address,on_delete=models.CASCADE)
     status = models.BooleanField(_('Order status'), default=False)
     shipment_status_id = models.ForeignKey(ShipmentStatus, on_delete=models.CASCADE)
     invoice_number = models.PositiveIntegerField()
