@@ -2,7 +2,7 @@ from django.db import models
 import uuid
 from django.utils.translation import ugettext_lazy as _
 from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
-# from api.v1.accounts.models import User
+from api.v1.accounts.models import User
 # from api.v1.orders.models import Order
 
 
