@@ -16,7 +16,7 @@ urlpatterns = [
         'jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('api-auth/', include('rest_framework.urls')),
     path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    # path('rest-auth/registration/', include('rest_auth.registration.urls')),
     path('api/gettoken/', TokenObtainPairView.as_view(), name="gettoken"),
     path('api/refresh_token', TokenRefreshView.as_view(),
 
@@ -28,7 +28,7 @@ urlpatterns = [
     path('category/', include('api.v1.category.urls')),
     path('orders/', include('api.v1.orders.urls')),
     path('payments/', include('api.v1.payments.urls')),
-    path('payments/', include('api.v1.products.urls')),
+    path('products/', include('api.v1.products.urls')),
     path('stock/', include('api.v1.stock.urls')),
     path('wishlist/', include('api.v1.wishlist.urls'))
 

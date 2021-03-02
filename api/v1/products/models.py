@@ -1,4 +1,6 @@
 from django.db import models
+from django_postgres_extensions.models.fields import ArrayField
+from django.contrib.postgres.fields import JSONField
 # from imagekit.models import ProcessedImageField
 # from imagekit.processors import ResizeToFill
 from api.v1.category.models import Category
@@ -14,6 +16,7 @@ class Product(models.Model):
     categoryid = models.ForeignKey(Category,on_delete=models.CASCADE)
     desciption = models.TextField()
     price = models.PositiveIntegerField()
+    more_prop = ArrayField(models.CharField(max_length=515), null=True, blank=True)
     # image = ProcessedImageField(upload_to='BackgroundImages/',
     #                             processors=[ResizeToFill(550, 550)],
     #                             format='JPEG',
