@@ -1,42 +1,41 @@
 from django.db import models
 import uuid
-from address.models import AddressField
+import datetime
+from django_address.fields import AddressField
 from django.utils.translation import ugettext_lazy as _
 from api.v1.products.models import Product
-from api.v1.accounts.models import User
-# from api.v1.payments.models import Payment
+from api.v1.accounts.models import Customer
 
 
-class ShipmentStatus(models.Model):
+# class ShipmentStatus(models.Model):
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    last_address = AddressField()
-    is_latest = models.BooleanField(_('Is Latest'), default=False)
-    updated_at=models.DateTimeField(auto_now_add=True)
-    update_by = models.ForeignKey(User, on_delete=models.CASCADE)
+#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+#     is_latest = models.BooleanField(_('Is Latest'), default=False)
+#     updated_at=models.DateTimeField(auto_now_add=True)
+#     update_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def __str__(self):
+#     def __str__(self):
 
-        return str(self.update_by)
+#         return str(self.update_by)
 
 
 class Order(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     product_id = models.ForeignKey(Product,on_delete=models.CASCADE)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    cancelReason = models.CharField(max_length=255,default='delayed')
+    cancelledOn = models.DateTimeField(default=datetime.datetime.now(), blank=True)
+    customer_email = models.EmailField(max_length=255, default = 'example@gmail.com',unique=True)
+    customer_id = models.ForeignKey(Customer, default=uuid.uuid1(),on_delete=models.CASCADE)
+    delivery_address = AddressField(default ='',verbose_name="Delivery address")
     quantity = models.PositiveIntegerField()
-    totalprice = models.PositiveIntegerField()
-    # payment_id = models.ForeignKey(Payment, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     status = models.BooleanField(_('Order status'), default=False)
-    shipment_status_id = models.ForeignKey(ShipmentStatus, on_delete=models.CASCADE)
-    invoice_number = models.PositiveIntegerField()
 
-class OrderStatus(models.Model):
+# class OrderStatus(models.Model):
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name  = models.CharField(max_length=255)
+#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+#     name  = models.CharField(max_length=255)
 
 
 

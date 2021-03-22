@@ -13,32 +13,28 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'django.contrib.sites',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    
     'corsheaders',
     'rest_auth',
     'rest_auth.registration',
     'rest_framework',
     'rest_framework.authtoken',
-
     'phonenumber_field',
-    'phone_field',
+    'django_address',
     'address',
-    
-
     'api.v1.accounts',
-    
+    'api.v1.varient',
+    'api.v1.carousel',
     'api.v1.cart',
     'api.v1.products',
     'api.v1.category',
     'api.v1.orders',
     'api.v1.payments',
     'api.v1.wishlist',
+    'api.v1.review',
     'api.v1.stock'
 ]
 
