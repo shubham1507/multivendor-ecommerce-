@@ -14,6 +14,7 @@ django-cors-headers==3.0.2
 django-credit-cards==0.4.1
 django-imagekit==2.0.4
 django-jet==1.0.8
+django-json-field==0.5.7
 django-phone-field==1.8.1
 django-phonenumber-field==5.0.0
 django-postgres-extensions==0.9.3
@@ -46,6 +47,7 @@ pycodestyle==2.5.0
 Pygments==2.8.0
 PyJWT==1.7.1
 pylint==2.3.1
+python-dateutil==2.8.1
 python-dotenv==0.15.0
 python3-openid==3.1.0
 pytz==2019.1

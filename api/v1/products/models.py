@@ -21,8 +21,9 @@ class Product(models.Model):
     desciption = models.TextField()
     price = models.PositiveIntegerField()
     brand = models.CharField(max_length=255,default='')
-    more_prop = ArrayField(models.CharField(max_length=515), null=True, blank=True)
-    image = models.ImageField(upload_to='images/')
+    # more_prop = ArrayField(models.CharField(max_length=515), null=True, blank=True)
+    image = models.FileField(upload_to='images/')
+    more_prop = JSONField()
     tags  = models.CharField(max_length=255,default='')
     by_seller =models.ForeignKey(Seller, on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
@@ -32,3 +33,7 @@ class Product(models.Model):
     def __str__(self):
 
         return "{}".format(self.product_name)
+
+
+         
+                

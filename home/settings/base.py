@@ -7,7 +7,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'jet',
+    
     'django.contrib.admin',
+    'django.contrib.postgres',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -25,6 +27,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_address',
     'address',
+    
     'api.v1.accounts',
     'api.v1.varient',
     'api.v1.carousel',
